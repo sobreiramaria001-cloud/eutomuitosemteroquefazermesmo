@@ -2,154 +2,23 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>💖 Pra você 💖</title>
-
 <style>
-body {
-  margin:0;
-  font-family:"Comic Sans MS", cursive;
-  background: radial-gradient(circle,#ff1493,#4b0026);
-  color:white;
-  overflow:hidden;
-  text-align:center;
-}
-
-/* título */
-h1{
-  font-size:2.5rem;
-  color:#ffccff;
-  text-shadow:0 0 10px #fff,0 0 20px #ff00ff,0 0 40px #ff66ff;
-  animation:blink 1s infinite alternate;
-}
-
-@keyframes blink{
-  from{opacity:.7}
-  to{opacity:1}
-}
-
-/* buquê */
-.bouquet{
-  width:600px;
-  animation:glow 2s infinite;
-}
-
-@keyframes glow{
-  0%{filter:drop-shadow(0 0 10px white)}
-  50%{filter:drop-shadow(0 0 60px hotpink)}
-  100%{filter:drop-shadow(0 0 10px white)}
-}
-
-/* contador */
-.counter{
-  position:absolute;
-  top:10px;
-  left:10px;
-  background:black;
-  padding:10px;
-  border:2px solid hotpink;
-}
-
-/* texto lateral */
-.right-text{
-  position:absolute;
-  right:20px;
-  top:150px;
-  font-size:1.8rem;
-  color:orange;
-}
-
-/* adore você */
-.bottom-love{
-  position:absolute;
-  bottom:100px;
-  left:20px;
-  font-size:2rem;
-  color:#ff66ff;
-}
-
-/* botão */
-.main-btn{
-  margin-top:20px;
-  padding:15px 30px;
-  font-size:1.2rem;
-  background:hotpink;
-  border:none;
-  border-radius:10px;
-  color:white;
-}
-
-/* glitter */
-.spark{
-  position:absolute;
-  width:5px;
-  height:5px;
-  background:white;
-  border-radius:50%;
-  animation:twinkle 2s infinite;
-}
-
-@keyframes twinkle{
-  0%,100%{opacity:.2}
-  50%{opacity:1}
-}
-
-marquee{
-  color:yellow;
-}
+body {background: pink; text-align:center; font-family: Comic Sans MS;}
+img {width:400px;}
 </style>
 </head>
-
 <body>
-
-<div class="counter">
-💖 visitante nº <br><strong id="count">000123</strong>
-</div>
-
-<marquee>💖 ESPECIAL PRA VOCÊ 💖</marquee>
 
 <h1>Esqueci de te dar isso aqui ontem, você tava meio rabugento 💐</h1>
 
-<img class="bouquet" src="bouquet.gif">
+<img src="bouquet.gif">
 
-<div class="right-text">
-Você é especial!
-</div>
+<button onclick="document.getElementById('m').play()">🎵 Tocar música</button>
 
-<div class="bottom-love">
-💖 Adoro você 💖
-</div>
-
-<button class="main-btn" onclick="tocarMusica()">🎵 Tocar música</button>
-
-<audio id="musica" loop>
+<audio id="m" loop>
 <source src="musica.mp3">
 </audio>
-
-<script>
-
-/* glitter */
-for(let i=0;i<80;i++){
- let s=document.createElement('div');
- s.className='spark';
- s.style.top=Math.random()*100+'%';
- s.style.left=Math.random()*100+'%';
- document.body.appendChild(s);
-}
-
-/* contador */
-let count=123;
-setInterval(()=>{
- count++;
- document.getElementById('count').innerText=String(count).padStart(6,'0');
-},2000);
-
-/* música */
-function tocarMusica(){
- document.getElementById('musica').play();
-}
-
-</script>
 
 </body>
 </html>
